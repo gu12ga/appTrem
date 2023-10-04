@@ -4,19 +4,17 @@
   align-items: center;
   background-color: #69A84F;
   padding-top: 10px;
+  padding-left: 10px;
   padding-bottom: 10px;
 }
 
-.custom-text-trem-1 {
-  font-size: 24px;
-  color: white
-}
-.custom-text-trem-2 {
+.custom-text-trem-2 { 
   font-size: 24px;
   color: white;
   font-size: 16px!important; 
   margin-left: 10px;
   text-align: center;
+  font-weight: bold;
 }
 
 .custom-text-inicio {
@@ -30,6 +28,7 @@
 
 .icone-custom {
   font-size: 24px; 
+  padding-right: 8px;
 }
 
 
