@@ -7,9 +7,16 @@
   padding-bottom: 10px;
 }
 
-.custom-text-trem {
+.custom-text-trem-1 {
   font-size: 24px;
   color: white
+}
+.custom-text-trem-2 {
+  font-size: 24px;
+  color: white;
+  font-size: 16px!important; 
+  margin-left: 10px;
+  text-align: center;
 }
 
 .custom-text-inicio {
@@ -85,8 +92,6 @@
   align-items: center;
   background-color: #e3f0df;
   width: 10px!important;
-  //height: 60px;
-  
 }
 
 .custom-col-checkbox2{
@@ -116,37 +121,6 @@ ion-select{
   width: 90%;
   text-align: center;
 }
-
-/*
-
-
-ion-col {
-  background-color: #135d54;
-  border: solid 1px #fff;
-  color: #fff;
-}
-
-
-.item {
-  flex: 1; 
-  text-align: center!important;
-  padding: 20px;
-}
-
-ion-col {
-  background-color: #135d54;
-  border: solid 1px #fff;
-  color: #fff;
-}
-
-
-.custom-item .item-divider {
-  background-color: #000!important;
-  color: #fff!important;
-  font-weight: bold!important;
-}
-
-*/
 
 
 

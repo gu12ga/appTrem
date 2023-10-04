@@ -61,7 +61,7 @@ export class HomePage {
 
   constructor() {}
 
-  abrirTermos() {
+  getTermos() {
 
   }
 

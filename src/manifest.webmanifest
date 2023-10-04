@@ -1,7 +1,7 @@
 {
-  "name": "T.R.E.M. Tecnologia de Referenciamento, Espacialização e Manejo do Greening",
+  "name": "T.R.E.M.",
   "short_name": "T.R.E.M.",
-  "theme_color": "#1976d2",
+  "theme_color": "#69A84F",
   "background_color": "#69A84F",
   "display": "standalone",
   "scope": "./",
