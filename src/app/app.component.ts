@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-root',
@@ -14,15 +15,16 @@ export class AppComponent {
   ngOnInit() {
     setTimeout(() => {
       this.hideSplash();
-    }, 5000);
+    }, 3000);
   }
 
   async hideSplash() {
-    this.routerHidden = false;
     
-    const splash = document.getElementById('splash-screen');
-    if (splash) {
-      splash.style.display = 'none';
-    }
+    await SplashScreen.show({
+      showDuration: 0,
+      autoHide: true,
+    });
+
+    this.routerHidden = false;
   }
 }
