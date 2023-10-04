@@ -1,0 +1,152 @@
+.custom-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #69A84F;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.custom-text-trem {
+  font-size: 24px;
+  color: white
+}
+
+.custom-text-inicio {
+  font-weight: bold;
+}
+
+.custom-continuar{
+  font-weight: bold;
+  --color:black;
+}
+
+.icone-custom {
+  font-size: 24px; 
+}
+
+
+.row-Inicio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.center-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #e3f0df;
+  height: 60px;
+  
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.custom-row{
+  margin-left: 2%;
+  margin-right: 2%;
+  border-color:#e3f0df!important;
+}
+
+.custom-col-label{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: #e3f0df;
+}
+
+.custom-col-input{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e3f0df;
+}
+
+.custom-list{
+  background-color: #e3f0df;
+}
+
+.custom-item {
+  display: flex;
+  flex-direction: column!important;
+}
+
+.custom-a{
+  color: blue;
+}
+.custom-col-checkbox1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #e3f0df;
+  width: 10px!important;
+  //height: 60px;
+  
+}
+
+.custom-col-checkbox2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #e3f0df;
+}
+
+ion-note{
+  background-color: #e3f0df;
+}
+
+ion-checkbox{
+  background-color: #e3f0df;
+
+}
+
+ion-input{
+  background-color: white;
+  width: 90%;
+  text-align: center;
+}
+
+ion-select{
+  background-color: white;
+  width: 90%;
+  text-align: center;
+}
+
+/*
+
+
+ion-col {
+  background-color: #135d54;
+  border: solid 1px #fff;
+  color: #fff;
+}
+
+
+.item {
+  flex: 1; 
+  text-align: center!important;
+  padding: 20px;
+}
+
+ion-col {
+  background-color: #135d54;
+  border: solid 1px #fff;
+  color: #fff;
+}
+
+
+.custom-item .item-divider {
+  background-color: #000!important;
+  color: #fff!important;
+  font-weight: bold!important;
+}
+
+*/
+
+
+

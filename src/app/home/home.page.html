@@ -1,0 +1,133 @@
+<ion-header class = "custom-header">
+    <img src="../assets/icon/favicon.png">
+
+    <ion-text class="custom-text-trem">
+      T.R.E.M.
+    </ion-text>
+  
+</ion-header>
+
+<ion-content>
+
+      <ion-grid>
+        <ion-row class="row-Inicio">
+
+          <ion-col>
+            <ion-text class = "custom-text-inicio">INÍCIO</ion-text>
+          </ion-col>
+
+          <ion-col></ion-col>
+
+          <ion-col></ion-col>
+          
+          <ion-col> 
+            <ion-button fill="outline" class = "custom-continuar">
+
+            <ion-icon name="exit-outline"  class="icone-custom"></ion-icon>
+            
+              Continuar
+  
+            </ion-button>
+            
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
+
+        <ion-row class = "custom-row" style = "border: solid; border-radius: 10px">
+          <ion-col class="center-text"><ion-text>Informe os dados abaixo e clique em <span class="bold">Continuar</span></ion-text></ion-col>
+        </ion-row>
+
+        <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
+
+        <ion-row class = "custom-row" style = "border: solid; border-top-left-radius: 10px; border-top-right-radius:10px">
+          <ion-col class = "custom-col-label" size = "0.7"></ion-col>
+          <ion-col class = "custom-col-label">
+            <ion-label class = "bold">Nome da propriedade</ion-label> 
+          </ion-col>
+        </ion-row>
+
+        <ion-row class = "custom-row">
+          <ion-col class = "custom-col-input">
+              <ion-input fill="outline"></ion-input>
+          </ion-col> 
+        </ion-row>
+
+        <ion-row class = "custom-row">
+          <ion-col class = "custom-col-label" size = "0.7"></ion-col>
+          <ion-col class = "custom-col-label">
+            <ion-label class = "bold">Estado</ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class = "custom-row">
+          <ion-col class = "custom-col-input">
+            <ion-select  fill = "outline"labelPlacement="stacked" [(ngModel)]="selectedEstado" (ionChange)="onEstadoChange()">
+              <ion-select-option *ngFor="let estado of estados" [value]="estado.nome">{{ estado.nome }}</ion-select-option>
+            </ion-select>
+          </ion-col> 
+        </ion-row>
+
+        <ion-row class = "custom-row">
+          <ion-col class = "custom-col-label" size = "0.7"></ion-col>
+          <ion-col class = "custom-col-label">
+            <ion-label class = "bold">Cidade</ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class = "custom-row">
+          <ion-col class = "custom-col-input">
+            <ion-select  fill = "outline"labelPlacement="stacked" [(ngModel)]="selectedCidade" (ionChange)="onCidadeChange()">
+              <ion-select-option *ngFor="let cidade of getCidades()" [value]="cidade">{{ cidade }}</ion-select-option>
+            </ion-select>
+          </ion-col> 
+        </ion-row>
+
+        <ion-row class = "custom-row">
+          <ion-col class = "custom-col-label" size = "0.7"></ion-col>
+          <ion-col class = "custom-col-label">
+            <ion-label class = "bold">Região</ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class = "custom-row">
+          <ion-col class = "custom-col-input">
+            <ion-select  fill = "outline"labelPlacement="stacked" [(ngModel)]="selectedRegiao">
+              <ion-select-option *ngFor="let regiao of getRegioes()" [value]="regiao">{{ regiao }}</ion-select-option>
+            </ion-select>
+          </ion-col> 
+        </ion-row>
+
+        <ion-row class = "custom-row">
+          <ion-col class = "custom-col-label" size = "0.7"></ion-col>
+          <ion-col class = "custom-col-label">
+            <ion-note> Não sabe qual região escolher?<a href="#" (click)="ajudaRegiao()" class = "custom-a">Clique aqui</a>.</ion-note>
+          </ion-col> 
+        </ion-row>
+
+        <ion-row class = "custom-row" style ="background-color:#e3f0df;"><ion-col size="auto"><div style="height: 5px;"></div>
+
+        </ion-col></ion-row>
+
+        <ion-row class = "custom-row" style = "border: solid; border-bottom-left-radius: 10px; border-bottom-right-radius:10px">
+          <ion-col class = "custom-col-checkbox1" size = "0.7">
+          </ion-col>
+
+          <ion-col class="custom-col-checkbox2" size = "1">
+
+            <ion-checkbox labelPlacement="end"> 
+            </ion-checkbox>
+
+          </ion-col>
+
+          <ion-col class="custom-col-checkbox2">
+            <ion-text>Ao clicar em Continuar, você concorda com nossos 
+              <a href="#" (click)="abrirTermos()" class = "custom-a">Termos e Política de Privacidade</a>.
+            </ion-text>
+          </ion-col>
+        </ion-row>        
+      
+      </ion-grid>
+  
+</ion-content>

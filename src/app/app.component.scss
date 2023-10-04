@@ -1,0 +1,25 @@
+
+  ion-grid{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    //background-color: #69A84F;
+    //background-position: top;
+  }
+  ion-row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 16.6%;
+  }
+
+  ion-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .custom-text-trem {
+    font-size: 24px;
+    color: white
+  }
