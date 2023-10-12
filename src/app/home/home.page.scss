@@ -7,15 +7,19 @@
   font-weight: bold;
 }
 
-.row-Inicio {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.custom-row-Inicio {
   border-bottom: 2px solid black;
 }
 
 .custom-text-inicio {
   font-weight: bold;
+}
+
+.custom-Inicio-Fim{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .custom-continuar{
@@ -74,16 +78,15 @@
 
 .custom-col{
   display: flex;
+  align-items: center;
   background-color: #e3f0df;
 }
 
 #col-label {
-  align-items: center;
   justify-content: left;
 }
 
 #col-input {
-  align-items: center;
   justify-content: center;
 }
 
