@@ -1,20 +1,17 @@
-.custom-header{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #69A84F;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-}
-
-.custom-text-trem-2 { 
+.custom-text-trem { 
   font-size: 24px;
   color: white;
   font-size: 16px!important; 
   margin-left: 10px;
   text-align: center;
   font-weight: bold;
+}
+
+.row-Inicio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 2px solid black;
 }
 
 .custom-text-inicio {
@@ -31,14 +28,6 @@
   padding-right: 8px;
 }
 
-
-.row-Inicio {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 2px solid black;
-}
-
 .center-text {
   display: flex;
   justify-content: center;
@@ -53,63 +42,89 @@
   font-weight: bold;
 }
 
-.custom-row{
+.custom-row {
   margin-left: 2%;
   margin-right: 2%;
   border-color:#e3f0df!important;
+  background-color:#e3f0df;
 }
 
-.custom-col-label{
+#row-Informe-dados {
+
+  border: solid; 
+  border-radius: 10px
+
+}
+
+#row-Nome {
+
+  border: solid; 
+  border-top-left-radius: 10px; 
+  border-top-right-radius:10px
+
+}
+
+#row-Check {
+
+  border: solid; 
+  border-bottom-left-radius: 10px; 
+  border-bottom-right-radius:10px
+
+}
+
+.custom-col{
   display: flex;
+  background-color: #e3f0df;
+}
+
+#col-label {
   align-items: center;
   justify-content: left;
-  background-color: #e3f0df;
 }
 
-.custom-col-input{
-  display: flex;
+#col-input {
   align-items: center;
   justify-content: center;
-  background-color: #e3f0df;
 }
 
-.custom-list{
-  background-color: #e3f0df;
-}
-
-.custom-item {
-  display: flex;
-  flex-direction: column!important;
-}
-
-.custom-a{
+a {
   color: blue;
 }
-.custom-col-checkbox1{
+
+.custom-col-checkbox{
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: #e3f0df;
+
+}
+
+#col-checkbox-1 {
+
   width: 10px!important;
+  
 }
 
-.custom-col-checkbox2{
+ion-header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: #69A84F;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+ion-note {
   background-color: #e3f0df;
 }
 
-ion-note{
-  background-color: #e3f0df;
-}
-
-ion-checkbox{
+ion-checkbox {
   background-color: #e3f0df;
 
 }
 
-ion-input{
+ion-input {
   background-color: white;
   width: 90%;
   text-align: center;
