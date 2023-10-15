@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 interface CidadesParaRegioes {
   [cidade: string]: string[];
@@ -11,6 +12,8 @@ interface CidadesParaRegioes {
 })
 export class HomePage {
   
+  constructor(private navCtrl: NavController) { }
+
   estados = [
     { nome: 'Minas Gerais', cidades: ['Belo Horizonte', 'Uberlândia'], regioes: ['Região 1', 'Região 2'] },
     { nome: 'São Paulo', cidades: ['São Paulo', 'Campinas'], regioes: ['Região A', 'Região B'] },
@@ -59,14 +62,16 @@ export class HomePage {
     return regioesMapeadas[cidadeSelecionada] || [];
   }
 
-  constructor() {}
-
   getTermos() {
 
   }
 
   ajudaRegiao() {
     
+  }
+  onContinuarClick() {
+    
+    this.navCtrl.navigateForward('/alerta');
   }
 }
 

@@ -1,0 +1,82 @@
+.custom-text-trem { 
+    font-size: 24px;
+    color: white;
+    font-size: 16px!important; 
+    margin-left: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .custom-Inicio{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .custom-row-Inicio {
+    border-bottom: 2px solid black;
+  }
+  
+  .custom-text-inicio {
+    font-weight: bold;
+  }
+
+  .custom-continuar{
+    font-weight: bold;
+    display: block!important;
+    --color:white;
+    margin-left: 10%;
+  }
+  
+  .icone-custom {
+    font-size: 24px; 
+    padding-right: 8px;
+  }
+
+  ion-header {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
+    background-color: #69A84F;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+
+  ion-icone{
+    color: black;
+  }
+
+  ion-toolbar{
+
+    display: flex;
+    justify-content: center;
+
+  }
+
+  ion-content{
+    height: 100%;
+    background-color: black;
+  }
+
+  ion-footer{
+    
+    bottom: 0;
+    width: 100%;
+  }
+
+  ion-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: auto;
+  }
+  
+  .icon-text {
+    margin-top: 4px; /* Ajuste o valor conforme necessário */
+  }
+  

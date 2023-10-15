@@ -15,7 +15,7 @@
   font-weight: bold;
 }
 
-.custom-Inicio-Fim{
+.custom-Fim{
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -24,7 +24,8 @@
 
 .custom-continuar{
   font-weight: bold;
-  --color:black;
+  display: block!important;
+  --color:white;
 }
 
 .icone-custom {
