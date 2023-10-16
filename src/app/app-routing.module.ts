@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'alerta',
     loadChildren: () => import('./alerta/alerta.module').then( m => m.AlertaPageModule)
   },
+  {
+    path: 'ajuda',
+    loadChildren: () => import('./ajuda/ajuda.module').then( m => m.AjudaPageModule)
+  },
 ];
 
 @NgModule({

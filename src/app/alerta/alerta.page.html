@@ -21,30 +21,42 @@
         <ion-text class = "custom-text-inicio">ALERTAS</ion-text>
       </ion-col>
     </ion-row>
+    <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
+      
+    <ion-row class = "custom-row" id = "row-Informe-dados">
+      <ion-col class="center-text"><ion-text>No momento, não há alertas de
+        pulverização na sua região! <a href="#" (click)="saibaMais()">Saiba mais</a></ion-text></ion-col>
+    </ion-row>
   </ion-grid>
 
-  <ion-footer>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-button>
-          <ion-icon src="./img/alerta.png"></ion-icon>
-          <div class="icon-text">ALERTAS</div>
-        </ion-button>
-        <ion-button>
-          <ion-icon src="./img/manejo.png"></ion-icon>
-          <div class="icon-text">MANEJO</div>
-        </ion-button>
-        <ion-button>
-          <ion-icon src="./img/ajuda.png"></ion-icon>
-          <div class="icon-text">AJUDA</div>
-        </ion-button>
-        <ion-button>
-          <ion-icon src="./img/confi.png"></ion-icon>
-          <div class="icon-text">CONFI</div>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-footer>
-  
-
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button>
+        <div class = "div-button">
+          <img src="../assets/icons/img/alerta.png">
+          ALERTAS
+        </div>
+      </ion-button>
+      <ion-button>
+        <div class = "div-button">
+          <img src="../assets/icons/img/manejo.png">
+          MANEJO
+        </div>
+      </ion-button>
+      <ion-button (click)="onAjudaClick()">
+        <div class = "div-button">
+          <img src="../assets/icons/img/ajuda.png">
+          AJUDA
+        </div>
+      </ion-button>
+      <ion-button>
+        <div class = "div-button">
+          <img src="../assets/icons/img/confi.png">
+          CONFI
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

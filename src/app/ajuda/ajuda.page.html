@@ -1,0 +1,107 @@
+<ion-header>
+
+  <img src="../assets/icon/favicon.png" width="10%">
+  <ion-text class="custom-text-trem">Tecnologia de Referenciamento,
+    Espacialização e Manejo do
+    Greening (T.R.E.M.)</ion-text>
+
+  <ion-button fill="clear"  class = "custom-continuar">
+
+    <ion-icon name="exit-outline"  class="icone-custom"></ion-icon>
+      SAIR
+   </ion-button>
+
+</ion-header>
+<ion-content>
+  <ion-grid>
+
+    <ion-row class="custom-row-Inicio">
+
+      <ion-col class = "custom-Inicio">
+        <ion-text class = "custom-text-inicio">AJUDA</ion-text>
+        <ion-button id = "button-sair" fill="outline" (click)="toggleExpandTodas()">
+          <ion-icon name="chevron-down-outline"  class="icone-custom"></ion-icon>
+          TODAS
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
+      
+    <ion-row (click)="toggleExpand1()">
+      <ion-col class = "custom-col">
+        <img src="../assets/icons/alerta/duvida.png" class = "custom-elemento-1">
+        <ion-label class = "custom-elemento-2">O QUE É?</ion-label>
+        <ion-icon name="chevron-down-outline" [ngClass]="{ 'expanded1': expanded1 }" size="large" class = "custom-elemento-3-1"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="expanded1">
+      <ion-col class = "custom-col">
+        <p>Lorem Ipsum is simply dummy text of the printing and
+          typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has
+          survived not only five centuries, but also the leap into
+          electronic typesetting, remaining essentially unchanged.
+          It was popularised in the 1960s with the release of
+          Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus
+          PageMaker including versions of Lorem Ipsum.</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row (click)="toggleExpand2()">
+      <ion-col class = "custom-col">
+        <img src="../assets/icons/alerta/transmissao.png" class = "custom-elemento-1">
+        <ion-label class = "custom-elemento-2">FORMAS DE TRANSMISSÃO</ion-label>
+        <ion-icon name="chevron-down-outline" [ngClass]="{ 'expanded2': expanded2 }" size="large" class = "custom-elemento-3-2"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="expanded2">
+      <ion-col class = "custom-col">
+        <p>Lorem Ipsum is simply dummy text of the printing and
+          typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has
+          survived not only five centuries, but also the leap into
+          electronic typesetting, remaining essentially unchanged.
+          It was popularised in the 1960s with the release of
+          Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus
+          PageMaker including versions of Lorem Ipsum.</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="onAlertaClick()">
+        <div class = "div-button">
+          <img src="../assets/icons/img/alerta.png">
+          ALERTAS
+        </div>
+      </ion-button>
+      <ion-button>
+        <div class = "div-button">
+          <img src="../assets/icons/img/manejo.png">
+          MANEJO
+        </div>
+      </ion-button>
+      <ion-button>
+        <div class = "div-button">
+          <img src="../assets/icons/img/ajuda.png">
+          AJUDA
+        </div>
+      </ion-button>
+      <ion-button>
+        <div class = "div-button">
+          <img src="../assets/icons/img/confi.png">
+          CONFI
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
