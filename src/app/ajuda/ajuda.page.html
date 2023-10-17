@@ -17,8 +17,10 @@
 
     <ion-row class="custom-row-Inicio">
 
-      <ion-col class = "custom-Inicio">
+      <ion-col class = "custom-Inicio" size = "8.8" size-md = "10">
         <ion-text class = "custom-text-inicio">AJUDA</ion-text>
+      </ion-col>
+      <ion-col class = "custom-Inicio" size = "auto" size-md = "auto">
         <ion-button id = "button-sair" fill="outline" (click)="toggleExpandTodas()">
           <ion-icon name="chevron-down-outline"  class="icone-custom"></ion-icon>
           TODAS
@@ -28,9 +30,13 @@
     <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
       
     <ion-row (click)="toggleExpand1()">
-      <ion-col class = "custom-col">
+      <ion-col class = "custom-col" size="auto">
         <img src="../assets/icons/alerta/duvida.png" class = "custom-elemento-1">
+      </ion-col>
+      <ion-col class = "custom-col">
         <ion-label class = "custom-elemento-2">O QUE É?</ion-label>
+      </ion-col>
+      <ion-col class = "custom-col">
         <ion-icon name="chevron-down-outline" [ngClass]="{ 'expanded1': expanded1 }" size="large" class = "custom-elemento-3-1"></ion-icon>
       </ion-col>
     </ion-row>
@@ -51,9 +57,15 @@
     </ion-row>
 
     <ion-row (click)="toggleExpand2()">
-      <ion-col class = "custom-col">
+      <ion-col size = "0.1" class = "custom-col"></ion-col>
+      <ion-col class = "custom-col" size = "auto">
         <img src="../assets/icons/alerta/transmissao.png" class = "custom-elemento-1">
+      </ion-col>
+      <ion-col size = "0.1" class = "custom-col"></ion-col>
+      <ion-col class = "custom-col" size = "6.4" size-md = "7.2">
         <ion-label class = "custom-elemento-2">FORMAS DE TRANSMISSÃO</ion-label>
+      </ion-col>
+      <ion-col class = "custom-col">
         <ion-icon name="chevron-down-outline" [ngClass]="{ 'expanded2': expanded2 }" size="large" class = "custom-elemento-3-2"></ion-icon>
       </ion-col>
     </ion-row>
@@ -77,20 +89,20 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-buttons>
-      <ion-button (click)="onAlertaClick()">
+    <ion-buttons class="ion-justify-content-center">
+      <ion-button (click)="onAlertaClick()"class = "button-menu">
         <div class = "div-button">
           <img src="../assets/icons/img/alerta.png">
           ALERTAS
         </div>
       </ion-button>
-      <ion-button>
+      <ion-button class = "button-menu">
         <div class = "div-button">
           <img src="../assets/icons/img/manejo.png">
           MANEJO
         </div>
       </ion-button>
-      <ion-button>
+      <ion-button class = "button-menu">
         <div class = "div-button">
           <img src="../assets/icons/img/ajuda.png">
           AJUDA

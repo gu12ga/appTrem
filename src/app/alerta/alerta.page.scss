@@ -66,6 +66,9 @@
     align-items: center;
   }
   
+  .button-menu{
+    margin-right: 10%;
+  }
 
   ion-header {
     display: flex;
@@ -91,6 +94,5 @@
   }
 
   ion-button {
-    margin-right: 10%;
     color:#69A84F
   }
