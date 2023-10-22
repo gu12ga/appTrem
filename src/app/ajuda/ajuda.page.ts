@@ -33,4 +33,13 @@ export class AjudaPage implements OnInit {
     this.expanded2 = !this.expanded2;
   }
 
+  onManejoClick(){
+    this.navCtrl.navigateForward('/manejo');
+  }
+
+  onConfiClick(){
+    this.navCtrl.navigateForward('/confi');
+  }
+
+
 }

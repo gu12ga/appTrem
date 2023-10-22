@@ -2,27 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-alerta',
-  templateUrl: './alerta.page.html',
-  styleUrls: ['./alerta.page.scss'],
+  selector: 'app-confi',
+  templateUrl: './confi.page.html',
+  styleUrls: ['./confi.page.scss'],
 })
-export class AlertaPage implements OnInit {
+export class ConfiPage implements OnInit {
 
   constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
-  saibaMais(){}
+  onAlertaClick(){
+    this.navCtrl.navigateForward('/alerta');
+
+  }
+
   onAjudaClick(){
-    this.navCtrl.navigateForward('/ajuda');
+    this.navCtrl.navigateForward('/ajuda'); 
   }
 
   onManejoClick(){
     this.navCtrl.navigateForward('/manejo');
   }
-  onConfiClick(){
-    this.navCtrl.navigateForward('/confi');
-  }
+
 
 }

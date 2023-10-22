@@ -12,46 +12,41 @@
    </ion-button>
 
 </ion-header>
+
 <ion-content>
   <ion-grid>
 
     <ion-row class="custom-row-Inicio">
 
       <ion-col class = "custom-Inicio">
-        <ion-text class = "custom-text-inicio">ALERTAS</ion-text>
+        <ion-text class = "custom-text-inicio">CONFIG</ion-text>
       </ion-col>
     </ion-row>
-    <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
-      
-    <ion-row class = "custom-row" id = "row-Informe-dados">
-      <ion-col class="center-text"><ion-text>No momento, não há alertas de
-        pulverização na sua região! <a href="#" (click)="saibaMais()">Saiba mais</a></ion-text></ion-col>
-    </ion-row>
   </ion-grid>
-
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
     <ion-buttons class="ion-justify-content-center">
-      <ion-button class = "button-menu">
+      <ion-button (click)="onAlertaClick()"class = "button-menu">
         <div class = "div-button">
           <img src="../assets/icons/img/alerta.png">
           ALERTAS
         </div>
       </ion-button>
-      <ion-button (click)="onManejoClick()" class = "button-menu">
+      <ion-button class = "button-menu" (click)="onManejoClick()">
         <div class = "div-button">
           <img src="../assets/icons/img/manejo.png">
           MANEJO
         </div>
       </ion-button>
-      <ion-button class = "button-menu" (click)="onAjudaClick()">
+      <ion-button (click)="onAjudaClick()" class = "button-menu">
         <div class = "div-button">
           <img src="../assets/icons/img/ajuda.png">
           AJUDA
         </div>
       </ion-button>
-      <ion-button (click)="onConfiClick()">
+      <ion-button>
         <div class = "div-button">
           <img src="../assets/icons/img/confi.png">
           CONFI

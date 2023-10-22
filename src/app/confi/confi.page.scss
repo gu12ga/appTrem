@@ -1,0 +1,161 @@
+.custom-text-trem { 
+    font-size: 24px;
+    color: white;
+    font-size: 16px!important; 
+    margin-left: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .custom-row-Inicio {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid black;
+  }
+  
+  .custom-text-inicio {
+    font-weight: bold;
+  }
+  
+  .custom-continuar{
+    font-weight: bold;
+    display: block!important;
+    color:white!important;
+    margin-left: 10%;
+  }
+  
+  .icone-custom {
+    font-size: 24px; 
+    padding-right: 8px;
+  }
+  
+  .center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e3f0df;
+    height: 60px;
+    
+  }
+  
+  .custom-row {
+    margin-left: 2%;
+    margin-right: 2%;
+    border-color:#e3f0df!important;
+    background-color:#e3f0df;
+  }
+  
+  #row-Informe-dados {
+  
+    border: solid; 
+    border-radius: 10px
+  
+  }
+  
+  a {
+    color: blue;
+  }
+  
+  p{
+    text-align: center;
+  }
+  
+  .custom-col{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #e3f0df;
+  }
+  
+  .custom-col-Regiao{
+    display: flex;
+    justify-content: flex-start!important;
+  }
+  
+  .custom-col-Botoes{
+  
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+  #col-img{
+  margin-left: 5%;
+  }
+  .custom-elemento-1{
+  
+    margin-left: 2%;
+  
+  }
+  
+  .custom-elemento-2{
+  
+    margin-left: 2%;
+  
+  }
+  
+  .custom-elemento-3-1{
+  
+    margin-left: 75%;
+  
+  }
+  
+  .custom-elemento-3-2{
+  
+    margin-left: 63.5%;
+  
+  }
+  
+  .button-sair{
+    color: black;
+    background-color: white!important;
+    margin: 1%;
+    
+  }
+  
+  .div-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .custom-Inicio{
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .button-menu{
+    margin-right: 10%;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  ion-header {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
+    background-color: #69A84F;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+  
+  ion-icone{
+    color: black;
+  }
+  
+  ion-button {
+    color:#69A84F
+  }
+  
+  ion-label{
+    background-color: #e3f0df;
+  }

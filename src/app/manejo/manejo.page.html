@@ -1,0 +1,93 @@
+<ion-header>
+
+  <img src="../assets/icon/favicon.png" width="10%">
+  <ion-text class="custom-text-trem">Tecnologia de Referenciamento,
+    Espacialização e Manejo do
+    Greening (T.R.E.M.)</ion-text>
+
+  <ion-button fill="clear"  class = "custom-continuar">
+
+    <ion-icon name="exit-outline"  class="icone-custom"></ion-icon>
+      SAIR
+   </ion-button>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row class="custom-row-Inicio">
+
+      <ion-col class = "custom-Inicio" size = "8.6" size-md = "10">
+        <ion-text class = "custom-text-inicio">MANEJO</ion-text>
+      </ion-col>
+      <ion-col class = "custom-Inicio" size = "auto" size-md = "auto">
+        <ion-button class = "button-sair" fill="outline" (click)="onNovoClick()">
+          <ion-icon name="add-circle-outline" class="icone-custom"></ion-icon>
+          NOVO
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
+    <ng-container *ngFor="let pulverizacao of pulverizacoes">
+      <ion-row class="custom-row">
+        <ion-col class="custom-col">
+          <ion-text class="bold">Pulverização agendada</ion-text>
+        </ion-col>
+        <ion-col class="custom-col">
+          <ion-text>{{ pulverizacao.dataPulverizacao }}</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="custom-row">
+        <ion-col size="0.6" size-md="1.76"></ion-col>
+        <ion-col class="custom-col-Regiao">
+          <ion-text>Região: {{ pulverizacao.regiao }}</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="custom-row">
+        <ion-col size="0.5" size-md="1.70"></ion-col>
+        <ion-col class="custom-col-Botoes">
+          <ion-button class="button-sair" fill="outline" (click)="onEditarClick(pulverizacao.id)">
+            <img src="../assets/icons/manejo/editar.png">
+            EDITAR
+          </ion-button>
+          <ion-button class="button-sair" fill="outline" (click)="onRemoverClick(pulverizacao.id)">
+            <ion-icon name="trash-outline"></ion-icon>
+            REMOVER
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons class="ion-justify-content-center">
+      <ion-button (click)="onAlertaClick()"class = "button-menu">
+        <div class = "div-button">
+          <img src="../assets/icons/img/alerta.png">
+          ALERTAS
+        </div>
+      </ion-button>
+      <ion-button class = "button-menu">
+        <div class = "div-button">
+          <img src="../assets/icons/img/manejo.png">
+          MANEJO
+        </div>
+      </ion-button>
+      <ion-button (click)="onAjudaClick()" class = "button-menu">
+        <div class = "div-button">
+          <img src="../assets/icons/img/ajuda.png">
+          AJUDA
+        </div>
+      </ion-button>
+      <ion-button (click)="onConfiClick()">
+        <div class = "div-button">
+          <img src="../assets/icons/img/confi.png">
+          CONFI
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

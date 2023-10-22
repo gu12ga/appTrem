@@ -17,7 +17,7 @@
 
     <ion-row class="custom-row-Inicio">
 
-      <ion-col class = "custom-Inicio" size = "8.8" size-md = "10">
+      <ion-col class = "custom-Inicio" size = "8.6" size-md = "10">
         <ion-text class = "custom-text-inicio">AJUDA</ion-text>
       </ion-col>
       <ion-col class = "custom-Inicio" size = "auto" size-md = "auto">
@@ -62,7 +62,7 @@
         <img src="../assets/icons/alerta/transmissao.png" class = "custom-elemento-1">
       </ion-col>
       <ion-col size = "0.1" class = "custom-col"></ion-col>
-      <ion-col class = "custom-col" size = "6.4" size-md = "7.2">
+      <ion-col class = "custom-col" size = "6.5" size-md = "7.2">
         <ion-label class = "custom-elemento-2">FORMAS DE TRANSMISSÃO</ion-label>
       </ion-col>
       <ion-col class = "custom-col">
@@ -96,7 +96,7 @@
           ALERTAS
         </div>
       </ion-button>
-      <ion-button class = "button-menu">
+      <ion-button (click)="onManejoClick()" class = "button-menu">
         <div class = "div-button">
           <img src="../assets/icons/img/manejo.png">
           MANEJO
@@ -108,7 +108,7 @@
           AJUDA
         </div>
       </ion-button>
-      <ion-button>
+      <ion-button (click)="onConfiClick()">
         <div class = "div-button">
           <img src="../assets/icons/img/confi.png">
           CONFI

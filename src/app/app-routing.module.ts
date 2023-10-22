@@ -19,6 +19,26 @@ const routes: Routes = [
     path: 'ajuda',
     loadChildren: () => import('./ajuda/ajuda.module').then( m => m.AjudaPageModule)
   },
+  {
+    path: 'manejo',
+    loadChildren: () => import('./manejo/manejo.module').then( m => m.ManejoPageModule)
+  },
+  {
+    path: 'manejo/:dataPulverizacao/:dataArmadilha/:quantP/:produto/:regiao',
+    loadChildren: () => import('./manejo/manejo.module').then( m => m.ManejoPageModule)
+  },
+  {
+    path: 'manejo-novo',
+    loadChildren: () => import('./manejo-novo/manejo-novo.module').then( m => m.ManejoNovoPageModule)
+  },
+  {
+    path: 'manejo-novo/:dataPulverizacao/:dataArmadilha/:quantP/:produto/:regiao',
+    loadChildren: () => import('./manejo/manejo.module').then( m => m.ManejoPageModule)
+  },
+  {
+    path: 'confi',
+    loadChildren: () => import('./confi/confi.module').then( m => m.ConfiPageModule)
+  },
 ];
 
 @NgModule({
