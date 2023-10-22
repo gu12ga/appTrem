@@ -36,6 +36,7 @@ export class ManejoNovoPage implements OnInit {
   dataArmadilha: string = '';
   dataPulveriza: string = '';
   quantP: number = 0;
+  id: number = 0;
 
   ngOnInit() {
   }
@@ -73,6 +74,7 @@ export class ManejoNovoPage implements OnInit {
     if(aux){
       const navigationExtras: NavigationExtras = {
         queryParams: {
+          id: this.id,
           dataPulverizacao: this.dataPulveriza,
           dataArmadilha: this.dataArmadilha,
           quantP: this.quantP,

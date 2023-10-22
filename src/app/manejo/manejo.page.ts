@@ -33,11 +33,12 @@ export class ManejoPage implements OnInit {
 
       }
       if(test){
-        this.count += 1;
-        const id = this.count;
 
-        if(dataPulverizacao != null && regiao != null)
+        if(dataPulverizacao != null && regiao != null){
+          this.count += 1;
+          const id = this.count;
           this.pulverizacoes.push({id, dataPulverizacao, dataArmadilha, quantP, produto, regiao });
+        }
       }
     })}
   
@@ -63,22 +64,45 @@ export class ManejoPage implements OnInit {
   }
 
   onEditarClick(id: number){
-// manejo-novo/:dataPulverizacao/:dataArmadilha/:quantP/:produto/:regiao
+
+    let posi: number = -1;
+
+    for(let i = 0; i<this.pulverizacoes.length; i++){
+      
+      if(this.pulverizacoes[i].id == id){
+        posi = i
+        break
+      }
+    }
+
     const navigationExtras: NavigationExtras = {
       queryParams: {
-        dataPulverizacao: this.pulverizacoes[id].dataPulverizacao,
-        dataArmadilha: this.pulverizacoes[id].dataArmadilha,
-        quantP: this.pulverizacoes[id].quantP,
-        produto: this.pulverizacoes[id].produto,
-        regiao: this.pulverizacoes[id].regiao
+        dataPulverizacao: this.pulverizacoes[posi].dataPulverizacao,
+        dataArmadilha: this.pulverizacoes[posi].dataArmadilha,
+        quantP: this.pulverizacoes[posi].quantP,
+        produto: this.pulverizacoes[posi].produto,
+        regiao: this.pulverizacoes[posi].regiao
       }
     };
+    
+    this.pulverizacoes.splice(posi)
+    
     this.navCtrl.navigateForward('/manejo-novo', navigationExtras);
 
   }
 
   onRemoverClick(id: number){
-    this.pulverizacoes.splice(id)
+    let posi: number = -1;
+
+    for(let i = 0; i<this.pulverizacoes.length; i++){
+      
+      if(this.pulverizacoes[i].id == id){
+        posi = i
+        break
+      }
+    }
+
+    this.pulverizacoes.splice(posi)
   }
 
 }
