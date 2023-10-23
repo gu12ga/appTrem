@@ -21,7 +21,7 @@
     font-weight: bold;
     display: block!important;
     color:white!important;
-    background-color: var(--ion-color-danger);
+    margin-left: 10%;
   }
   
   .icone-custom {
@@ -63,18 +63,27 @@
   
   .custom-col{
     display: flex;
-    justify-content: flex-start!important;
+    align-items: center;
+    background-color: #e3f0df;
   }
 
+  #col-input {
+    justify-content: center;
+  }
+  #col-label {
+    justify-content: left;
+  }  
+  
+  .custom-col-Regiao{
+    display: flex;
+    justify-content: flex-start!important;
+  }
+  
   .custom-col-Botoes{
   
     display: flex;
     flex-direction: row;
   
-  }
-
-  #col-sair{
-    justify-content: center;
   }
   
   #col-img{
@@ -132,6 +141,9 @@
   .bold {
     font-weight: bold;
   }
+  .red {
+    color: red;
+  }
   
   ion-header {
     display: flex;
@@ -151,7 +163,15 @@
   ion-button {
     color:#69A84F
   }
+
+  ion-input {
+    background-color: white;
+    width: 90%;
+    text-align: center;
+  }
   
-  ion-label{
-    background-color: #e3f0df;
+  ion-select{
+    background-color: white;
+    width: 90%;
+    text-align: center;
   }

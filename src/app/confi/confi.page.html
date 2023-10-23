@@ -4,13 +4,6 @@
   <ion-text class="custom-text-trem">Tecnologia de Referenciamento,
     Espacialização e Manejo do
     Greening (T.R.E.M.)</ion-text>
-
-  <ion-button fill="clear"  class = "custom-continuar">
-
-    <ion-icon name="exit-outline"  class="icone-custom"></ion-icon>
-      SAIR
-   </ion-button>
-
 </ion-header>
 
 <ion-content>
@@ -22,8 +15,50 @@
         <ion-text class = "custom-text-inicio">CONFIG</ion-text>
       </ion-col>
     </ion-row>
+
+    <ion-row class = "custom-row" id = "row-Check">
+      <ion-col class = "custom-col-checkbox" id = "col-checkbox-1" size = "0.7">
+      </ion-col>
+
+      <ion-col class="custom-col-checkbox" size = "1">
+        <ion-checkbox labelPlacement="end"> 
+        </ion-checkbox>
+      </ion-col>
+      <ion-col class="custom-col-checkbox2">
+        <ion-text>Ao marcar essa opção, você concorda em
+alertas de pulverizações para sua região.
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
+      <ion-row class="custom-row">
+        <ion-col size="0.6" size-md="1.76"></ion-col>
+        <ion-col class="custom-col">
+          <ion-text class="bold"> {{ nomePropriedade }}</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="custom-row">
+        <ion-col size="0.6" size-md="1.76"></ion-col>
+        <ion-col class="custom-col">
+          <ion-text>Região: {{ regiao }}</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="custom-row">
+        <ion-col size="0.5" size-md="1.70"></ion-col>
+        <ion-col class="custom-col-Botoes">
+          <ion-button class="button-sair" fill="outline" (click)="onEditarClick()">
+            <img src="../assets/icons/manejo/editar.png">
+            EDITAR
+          </ion-button>
+        </ion-col>
+      </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-button fill="clear" expand="full" class = "custom-continuar" (click)="onSairClick()">
+  <ion-icon name="exit-outline"  class="icone-custom"></ion-icon>
+  SAIR
+</ion-button>
 
 <ion-footer>
   <ion-toolbar>

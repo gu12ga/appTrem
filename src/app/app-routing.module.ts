@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'confi',
     loadChildren: () => import('./confi/confi.module').then( m => m.ConfiPageModule)
   },
+  {
+    path: 'confi-novo',
+    loadChildren: () => import('./confi-novo/confi-novo.module').then( m => m.ConfiNovoPageModule)
+  },
 ];
 
 @NgModule({
