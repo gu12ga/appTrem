@@ -14,13 +14,23 @@ export class ManejoPage implements OnInit {
 
   count = 0
 
-  pulverizacoes = [{id: 0, dataPulverizacao: '18/Set', dataArmadilha: '18/Set', quantP: '10', produto: 'ABC', regiao: 'Região 2'}]
+  pulverizacoes = [{id: 0, dataPulverizacao: '18/Set', dataArmadilha: '18/Set', quantP: '10', produto: 'ABC', regiao: ''}]
   alertas: boolean = false;
 
   constructor(private navCtrl: NavController, private route: ActivatedRoute) {
     (async () => {
 
       const alertas = await Storage.get({ key: 'alertas' });
+      const regioesString = await Storage.get({ key: 'regioes' });
+      
+      if (regioesString && regioesString.value !== null) {
+
+        const regioes = JSON.parse(regioesString.value);
+        if(this.pulverizacoes.length == 1){
+          this.pulverizacoes[0].regiao = regioes[0]
+        }
+      
+      }
       
       if (alertas && alertas.value !== null) {
 
