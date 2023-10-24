@@ -14,18 +14,36 @@ interface CidadesParaRegioes {
 })
 export class HomePage {
   
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController) { 
+  }
 
   estados = [
     { nome: 'Minas Gerais', cidades: ['Belo Horizonte', 'Uberlândia'], regioes: ['Região 1', 'Região 2'] },
     { nome: 'São Paulo', cidades: ['São Paulo', 'Campinas'], regioes: ['Região A', 'Região B'] },
   ];
 
-  nomePropriedade: string = ''
+  nomePropriedade: string = '';
   selectedEstado: string = '';
   selectedCidade: string = '';
   selectedRegiao: string = '';
+  checkBoxValue: boolean = false;
 
+  ionViewWillEnter() {
+    this.selectedRegiao = '';
+    this.selectedEstado = '';
+    this.selectedCidade = '';
+    this.nomePropriedade = '';
+    this.checkBoxValue = false;
+    (async () => {
+      await Storage.set({
+        key: 'alertas',
+        value: 'false',
+      });
+    })();
+  }
+  ngOnInit() {
+
+  }
   onEstadoChange() {
    
     this.selectedCidade = '';
@@ -74,27 +92,43 @@ export class HomePage {
   }
   onContinuarClick() {
 
-    (async () => {
+    if(this.checkBoxValue == false){
+      alert("Você deve aceitar todos os termos")
+    }
+    else{
+    if(this.selectedRegiao !== '' || this.selectedEstado !== '' || this.selectedEstado !== '' || this.selectedRegiao !== ''){
+      const listR: string[] = [];
+
+      listR.push(this.selectedRegiao);
       
-      await Storage.set({
-        key: 'nomePropriedade',
-        value: this.nomePropriedade,
-      });
-      await Storage.set({
-        key: 'estado',
-        value: this.selectedEstado,
-      });
-      await Storage.set({
-        key: 'cidade',
-        value: this.selectedCidade,
-      });
-      await Storage.set({
-        key: 'regiao',
-        value: this.selectedRegiao,
-      });
-    })();
-    
-    this.navCtrl.navigateForward('/alerta');
+      (async () => {
+        
+        const listRAsString = JSON.stringify(listR);
+        
+        await Storage.set({
+          key: 'nomePropriedade',
+          value: this.nomePropriedade,
+        });
+        await Storage.set({
+          key: 'estado',
+          value: this.selectedEstado,
+        });
+        await Storage.set({
+          key: 'cidade',
+          value: this.selectedCidade,
+        });
+        await Storage.set({
+          key: 'regioes',
+          value: listRAsString,
+        });
+      })();
+      
+      this.navCtrl.navigateForward('/alerta');
+    }
+    else{
+      alert("Voocê não preencheu todos os campos")
+    }
   }
+}
 }
 

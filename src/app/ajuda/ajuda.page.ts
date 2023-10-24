@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Storage } from '@capacitor/storage';
 
 @Component({
   selector: 'app-ajuda',
@@ -10,11 +11,43 @@ export class AjudaPage implements OnInit {
 
   expanded1: boolean = false;
   expanded2: boolean = false;
+  alertas : boolean = false;
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController) {
+    (async () => {
+
+      const alertas = await Storage.get({ key: 'alertas' });
+      
+      if (alertas && alertas.value !== null) {
+
+        this.alertas = JSON.parse(alertas.value.toLowerCase());
+
+      }
+    })()
+  }
 
   ngOnInit() {
   }
+
+  ionViewWillEnter() {
+
+    const n = Math.random();
+
+    const resul = Math.round(n);
+
+    if (resul && !this.alertas) {
+      
+      this.alertas = true;
+      
+      (async () => {
+        await Storage.set({
+          key: 'alertas',
+          value: 'true',
+        });
+      })();
+    }
+  }
+  
 
   toggleExpand1() {
     this.expanded1 = !this.expanded1;
@@ -25,7 +58,7 @@ export class AjudaPage implements OnInit {
   }
 
   onAlertaClick(){
-    this.navCtrl.navigateForward('/alerta');
+      this.navCtrl.navigateForward('/alerta');
   }
 
   toggleExpandTodas(){

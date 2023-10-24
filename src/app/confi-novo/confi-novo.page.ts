@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@capacitor/storage';
-import { NavigationExtras } from '@angular/router';
 
 
 interface CidadesParaRegioes {
@@ -20,7 +19,7 @@ export class ConfiNovoPage implements OnInit {
       const nomePropriedade = await Storage.get({ key: 'nomePropriedade' });
       const estado = await Storage.get({ key: 'estado' });
       const cidade = await Storage.get({ key: 'cidade' });
-      const regiao = await Storage.get({ key: 'regiao' });
+      const regiao = await Storage.get({ key: 'regioes' });
 
       if (nomePropriedade && nomePropriedade.value !== null) {
           this.nomePropriedade = nomePropriedade.value;
@@ -32,7 +31,16 @@ export class ConfiNovoPage implements OnInit {
           this.selectedCidade = cidade.value;
       }
       if (regiao && regiao.value !== null) {
-          this.selectedRegiao = regiao.value;
+          this.listRegiao = JSON.parse(regiao.value);
+          this.selectedRegiao = this.listRegiao[0];
+          this.listRegiao.splice(0,1);
+      }
+
+      const alertas = await Storage.get({ key: 'alertas' });
+      
+      if (alertas && alertas.value !== null) {
+
+        this.alertas = JSON.parse(alertas.value.toLowerCase());
       }
   })();
   }
@@ -46,6 +54,8 @@ export class ConfiNovoPage implements OnInit {
   selectedEstado: string = '';
   selectedCidade: string = '';
   selectedRegiao: string = '';
+  listRegiao: string[] = [];
+  alertas: boolean = false;
 
   onEstadoChange() {
    
@@ -97,6 +107,33 @@ export class ConfiNovoPage implements OnInit {
   ngOnInit() {
   }
 
+  ionViewWillEnter() {
+    const n = Math.random();
+
+    const resul = Math.round(n);
+
+    if (resul && !this.alertas) {
+      
+      this.alertas = true;
+      
+      (async () => {
+        await Storage.set({
+          key: 'alertas',
+          value: 'true',
+        });
+      })();
+    }
+  }
+
+  onAddClick(){
+    this.listRegiao.push("")
+  }
+  onRemoveClick(i: number){
+
+    this.listRegiao.splice(i);
+
+  }
+
   onNovoClick(){
     this.navCtrl.navigateForward('/confi'); 
   }
@@ -124,6 +161,8 @@ export class ConfiNovoPage implements OnInit {
 
     if(aux){
 
+      const listRegiao: string[] = [];
+
       (async () => {
       
         await Storage.set({
@@ -138,9 +177,18 @@ export class ConfiNovoPage implements OnInit {
           key: 'cidade',
           value: this.selectedCidade,
         });
+
+        listRegiao.push(this.selectedRegiao);
+
+        for(let r of this.listRegiao){
+          listRegiao.push(r)
+        }
+        
+        const listRAsString = JSON.stringify(listRegiao);
+        
         await Storage.set({
-          key: 'regiao',
-          value: this.selectedRegiao,
+          key: 'regioes',
+          value: listRAsString,
         });
       })();
 

@@ -11,7 +11,7 @@
 
     <ion-row class="custom-row-Inicio">
 
-      <ion-col class = "custom-Inicio" size = "8.6" size-md = "10">
+      <ion-col class = "custom-Inicio" size = "7.5" size-md = "10">
         <div (click)="onNovoClick()" class = "custom-text-inicio">
           <ion-icon name="arrow-back-outline"></ion-icon>
           NOVO
@@ -112,6 +112,7 @@
           <img src="../assets/icons/img/alerta.png">
           ALERTAS
         </div>
+        <ion-badge color="danger" *ngIf="alertas == true">1</ion-badge>
       </ion-button>
       <ion-button class = "button-menu">
         <div class = "div-button">

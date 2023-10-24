@@ -12,7 +12,8 @@ export class ConfiPage implements OnInit {
   nomePropriedade: string = ''
   estado: string = '';
   cidade: string = '';
-  regiao: string = '';
+  listRegiao: string[] = [];
+  alertas: boolean = false;
 
   constructor(private navCtrl: NavController) { 
     this.updateData()
@@ -22,7 +23,7 @@ export class ConfiPage implements OnInit {
     const nomePropriedade = await Storage.get({ key: 'nomePropriedade' });
     const estado = await Storage.get({ key: 'estado' });
     const cidade = await Storage.get({ key: 'cidade' });
-    const regiao = await Storage.get({ key: 'regiao' });
+    const regiao = await Storage.get({ key: 'regioes' });
   
     if (nomePropriedade && nomePropriedade.value !== null) {
       this.nomePropriedade = nomePropriedade.value;
@@ -34,7 +35,14 @@ export class ConfiPage implements OnInit {
       this.cidade = cidade.value;
     }
     if (regiao && regiao.value !== null) {
-      this.regiao = regiao.value;
+      this.listRegiao = JSON.parse(regiao.value);
+    }
+
+    const alertas = await Storage.get({ key: 'alertas' });
+      
+    if (alertas && alertas.value !== null) {
+
+      this.alertas = JSON.parse(alertas.value.toLowerCase());
     }
   }
 
@@ -43,6 +51,21 @@ export class ConfiPage implements OnInit {
 
   ionViewWillEnter() {
     this.updateData();
+    const n = Math.random();
+
+    const resul = Math.round(n);
+
+    if (resul && !this.alertas) {
+
+      this.alertas = true;
+      
+      (async () => {
+        await Storage.set({
+          key: 'alertas',
+          value: 'true',
+        });
+      })();
+    }
   }
   
 
@@ -74,7 +97,9 @@ export class ConfiPage implements OnInit {
       await Storage.remove({ key: 'regiao' });
     })();
 
-    this.navCtrl.navigateForward('/');
+    this.navCtrl.navigateBack('/').then(() => {
+      this.navCtrl.navigateForward('/');
+    });
 
   }
 

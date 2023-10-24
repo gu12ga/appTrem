@@ -20,18 +20,6 @@
     font-weight: bold;
   }
 
-  .custom-continuar{
-    font-weight: bold;
-    display: block!important;
-    color:white!important;
-    margin-left: 10%;
-  }
-  
-  .icone-custom {
-    font-size: 24px; 
-    padding-right: 8px;
-  }
-  
   .center-text {
     display: flex;
     justify-content: center;
@@ -40,6 +28,10 @@
     background-color: #e3f0df;
     height: 60px;
     
+  }
+  
+  .bold {
+    font-weight: bold;
   }
 
   .custom-row {
@@ -67,7 +59,7 @@
   }
   
   .button-menu{
-    margin-right: 10%;
+    margin-right: 9%;
   }
 
   ion-header {

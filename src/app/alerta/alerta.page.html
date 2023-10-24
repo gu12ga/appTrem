@@ -1,5 +1,4 @@
 <ion-header>
-
   <img src="../assets/icon/favicon.png" width="10%">
   <ion-text class="custom-text-trem">Tecnologia de Referenciamento,
     Espacialização e Manejo do
@@ -7,21 +6,43 @@
 </ion-header>
 <ion-content>
   <ion-grid>
-
     <ion-row class="custom-row-Inicio">
-
       <ion-col class = "custom-Inicio">
         <ion-text class = "custom-text-inicio">ALERTAS</ion-text>
       </ion-col>
     </ion-row>
     <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
-      
-    <ion-row class = "custom-row" id = "row-Informe-dados">
-      <ion-col class="center-text"><ion-text>No momento, não há alertas de
-        pulverização na sua região! <a href="#" (click)="saibaMais()">Saiba mais</a></ion-text></ion-col>
+    <ion-row class = "custom-row" id = "row-Informe-dados" *ngIf="!alertas">
+      <ion-col class="center-text">
+        <ion-text>No momento, não há alertas de
+        pulverização na sua região! <a href="#" (click)="saibaMais()">Saiba mais</a>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="custom-row" *ngIf="alertas">
+      <ion-col size="0.6" size-md="1.76"></ion-col>
+      <ion-col class="custom-col">
+        <ion-text class="bold">Pulverização agendada</ion-text>
+      </ion-col>
+      <ion-col class="custom-col">
+        <ion-text>18/Set</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="custom-row" *ngIf="alertas">
+      <ion-col size="0.6" size-md="1.76"></ion-col>
+      <ion-col class="custom-col-Regiao">
+        <ion-text>Região: Serrinha 2</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="custom-row" *ngIf="alertas">
+      <ion-col size="0.5" size-md="1.70"></ion-col>
+      <ion-col class="custom-col-checkbox" size = "1" >
+        <ion-checkbox labelPlacement="end" [(ngModel)]="checkBoxValue" (ionChange)="onChangeCheckBoxValue()">
+          MARCAR COMO LIDO 
+        </ion-checkbox>
+      </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>
 <ion-footer>
   <ion-toolbar>

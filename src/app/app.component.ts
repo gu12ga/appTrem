@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor() {}
+  routerHidden = true;
+
+  constructor() {
+  }
   
+  ngOnInit() {
+
+    setTimeout(() => {
+      this.routerHidden = false;
+    }, 0);
+  }
+
+  ionViewWillEnter() {
+    (async () => {
+      await SplashScreen.show({
+        showDuration: 0,
+        autoHide: true,
+      })})()
+  }
 }

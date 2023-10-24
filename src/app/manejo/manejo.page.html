@@ -1,17 +1,13 @@
 <ion-header>
-
   <img src="../assets/icon/favicon.png" width="10%">
   <ion-text class="custom-text-trem">Tecnologia de Referenciamento,
     Espacialização e Manejo do
     Greening (T.R.E.M.)</ion-text>
 </ion-header>
-
 <ion-content>
   <ion-grid>
-
     <ion-row class="custom-row-Inicio">
-
-      <ion-col class = "custom-Inicio" size = "8.6" size-md = "10">
+      <ion-col class = "custom-Inicio" size = "7.5" size-md = "10">
         <ion-text class = "custom-text-inicio">MANEJO</ion-text>
       </ion-col>
       <ion-col class = "custom-Inicio" size = "auto" size-md = "auto">
@@ -62,6 +58,7 @@
           <img src="../assets/icons/img/alerta.png">
           ALERTAS
         </div>
+        <ion-badge color="danger" *ngIf="alertas == true">1</ion-badge>
       </ion-button>
       <ion-button class = "button-menu">
         <div class = "div-button">
