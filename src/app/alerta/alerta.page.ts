@@ -90,6 +90,7 @@ export class AlertaPage implements OnInit {
           this.alertas = false
           this.checkBoxValue2 = false
           this.checkBoxValue = false
+          this.isCheckboxDisabled = false
         }
 
       }
