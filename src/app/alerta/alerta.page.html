@@ -7,8 +7,15 @@
 <ion-content>
   <ion-grid>
     <ion-row class="custom-row-Inicio">
-      <ion-col class = "custom-Inicio">
+      <ion-col class = "custom-Inicio" size = "7.5" size-md = "10">
         <ion-text class = "custom-text-inicio">ALERTAS</ion-text>
+      </ion-col>
+      <ion-col class = "custom-Inicio" size = "auto" size-md = "auto" *ngIf="alertas">
+        <ion-button id = "button-sair" fill="outline">
+          <ion-checkbox labelPlacement="end" [(ngModel)]="checkBoxValue2" (ionChange)="onChangeCheckBoxValueAll()">
+            TODAS 
+          </ion-checkbox>
+        </ion-button>
       </ion-col>
     </ion-row>
     <ion-row><ion-col size="auto"><div style="height: 5px"></div></ion-col></ion-row>
@@ -37,7 +44,7 @@
     <ion-row class="custom-row" *ngIf="alertas">
       <ion-col size="0.5" size-md="1.70"></ion-col>
       <ion-col class="custom-col-checkbox" size = "1" >
-        <ion-checkbox labelPlacement="end" [(ngModel)]="checkBoxValue" (ionChange)="onChangeCheckBoxValue()">
+        <ion-checkbox labelPlacement="end" [(ngModel)]="checkBoxValue" [disabled]="isCheckboxDisabled" (ionChange)="onChangeCheckBoxValue()">
           MARCAR COMO LIDO 
         </ion-checkbox>
       </ion-col>

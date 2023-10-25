@@ -11,6 +11,8 @@ export class AlertaPage implements OnInit {
 
   alertas:boolean = true;
   checkBoxValue:boolean = false;
+  checkBoxValue2:boolean = false;
+  isCheckboxDisabled:boolean = false;
 
   constructor(private navCtrl: NavController) { 
   }
@@ -29,17 +31,49 @@ export class AlertaPage implements OnInit {
 
   onChangeCheckBoxValue(){
 
-    this.alertas = false;
-      
-    (async () => {
-      await Storage.set({
-        key: 'alertas',
-        value: 'false',
-      });
-    })();
-
-    this.checkBoxValue = false;
+    if(this.checkBoxValue){
+      (async () => {
+        await Storage.set({
+          key: 'alertas',
+          value: 'false',
+        });
+      })();
+    } else{
+      (async () => {
+        await Storage.set({
+          key: 'alertas',
+          value: 'true',
+        });
+      })();
+    }
   }
+
+  onChangeCheckBoxValueAll(){
+    if(this.checkBoxValue2){
+
+      (async () => {
+        await Storage.set({
+          key: 'alertas',
+          value: 'false',
+        });
+      })();
+      this.checkBoxValue = true;
+      this.isCheckboxDisabled = true;
+
+    } else{
+
+      (async () => {
+        await Storage.set({
+          key: 'alertas',
+          value: 'true',
+        });
+      })();
+      this.checkBoxValue = false
+      this.isCheckboxDisabled = false
+
+    }
+  }
+
   ngOnInit() {
   }
 
@@ -47,13 +81,54 @@ export class AlertaPage implements OnInit {
   }
 
   onAjudaClick(){
+    (async () => {
+      const alertas = await Storage.get({ key: 'alertas' });
+      
+      if (alertas && alertas.value !== null) {
+
+        if(JSON.parse(alertas.value.toLowerCase()) == false){
+          this.alertas = false
+          this.checkBoxValue2 = false
+          this.checkBoxValue = false
+        }
+
+      }
+    })();
     this.navCtrl.navigateForward('/ajuda');
   }
 
   onManejoClick(){
+    (async () => {
+      const alertas = await Storage.get({ key: 'alertas' });
+      
+      if (alertas && alertas.value !== null) {
+
+        if(JSON.parse(alertas.value.toLowerCase()) == false){
+          this.alertas = false
+          this.checkBoxValue2 = false
+          this.checkBoxValue = false
+          this.isCheckboxDisabled = false
+        }
+
+      }
+    })();
     this.navCtrl.navigateForward('/manejo');
   }
   onConfiClick(){
+    (async () => {
+      const alertas = await Storage.get({ key: 'alertas' });
+      
+      if (alertas && alertas.value !== null) {
+
+        if(JSON.parse(alertas.value.toLowerCase()) == false){
+          this.alertas = false
+          this.checkBoxValue2 = false
+          this.checkBoxValue = false
+          this.isCheckboxDisabled = false
+        }
+
+      }
+    })();
     this.navCtrl.navigateForward('/confi');
   }
 
